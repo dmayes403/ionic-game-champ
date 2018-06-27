@@ -1,25 +1,31 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import * as _ from 'lodash';
 
-/**
- * Generated class for the GamePage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-
-@IonicPage()
 @Component({
-  selector: 'page-game',
-  templateUrl: 'game.html',
+    selector: 'page-game',
+    templateUrl: 'game.html',
 })
 export class GamePage {
+    
+    constructor(
+        public navCtrl: NavController, 
+        public navParams: NavParams,
+    ) {
+        // this.game = this.formBuilder.group({
+        //     name: [''],
+        //     gameType: [''],
+        //     players: [''],
+        //     description: [''],
+        //     startDate: [''],
+        //     endDate: [''],
+        //     winner: ['']
+        // });
+    }
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-  }
-
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad GamePage');
-  }
+    ionViewDidLoad() {
+        console.log(this.navParams.data);
+        console.log('ionViewDidLoad GamePage');
+    }
 
 }

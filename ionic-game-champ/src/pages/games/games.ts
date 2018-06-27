@@ -1,25 +1,22 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { GamePage } from '../game/game';
 
-/**
- * Generated class for the GamesPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-
-@IonicPage()
 @Component({
-  selector: 'page-games',
-  templateUrl: 'games.html',
+    selector: 'page-games',
+    templateUrl: 'games.html',
 })
 export class GamesPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-  }
+    gamePage = GamePage;
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad GamesPage');
-  }
+    constructor(
+        public navCtrl: NavController,
+        public navParams: NavParams
+    ) { }
+
+    ionViewDidLoad() {
+        console.log('ionViewDidLoad GamesPage');
+    }
 
 }
