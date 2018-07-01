@@ -19,13 +19,30 @@
     </ion-item>
 
     <br>
-
-    <ion-item>
-        <div padding style="display: flex; flex-direction: row;">
+    <!-- <ion-card padding>
+        <div style="display: flex; flex-direction: row;">
             <ion-label>Number of Players</ion-label>
-            <ion-select [selectOptions]="selectOptions" [(ngModel)]="select">
+            <ion-select [selectOptions]="selectOptions" [(ngModel)]="currentCount">
                 <ion-option *ngFor="let count of playerCount">{{count}}</ion-option>
             </ion-select>
         </div>
-    </ion-item>
+    </ion-card> -->
+    <!-- <ion-card style="display: flex; flex-direction: row; padding: 0px 20px;">
+        <ion-label>Number of Players</ion-label>
+        <ion-select [selectOptions]="selectOptions" [(ngModel)]="currentCount">
+            <ion-option *ngFor="let count of playerCount">{{count}}</ion-option>
+        </ion-select>
+    </ion-card> -->
+    <ion-card>
+        <ion-item>
+            <ion-label>Number of Players</ion-label>
+            <ion-select [selectOptions]="selectOptions" [(ngModel)]="currentCount">
+                <ion-option *ngFor="let count of playerCount">{{count}}</ion-option>
+            </ion-select>
+        </ion-item>
+    </ion-card>
+
+    <br>
+    <br>
+    <button (click)="getCount()">Get Count</button>
 </ion-content>

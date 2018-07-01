@@ -7,7 +7,7 @@ import { NavController, NavParams } from 'ionic-angular';
 })
 export class NewGamePage {
     playerCount = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-    select: number;
+    currentCount = 0;
     selectOptions = {
         title: 'Players',
         subTitle: 'Select your player count',
@@ -21,4 +21,7 @@ export class NewGamePage {
         console.log('ionViewDidLoad NewGamePage');
     }
 
+    getCount() {
+        console.log(this.currentCount);
+    }
 }
