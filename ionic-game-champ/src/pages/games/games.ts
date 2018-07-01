@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams } from 'ionic-angular';
 import { NewGamePage } from '../new-game/new-game';
 
 @Component({
@@ -9,7 +9,7 @@ import { NewGamePage } from '../new-game/new-game';
 export class GamesPage {
 
     newGamePage = NewGamePage;
-    
+
     constructor(
         public navCtrl: NavController,
         public navParams: NavParams

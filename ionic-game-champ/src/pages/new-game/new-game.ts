@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
-import { AngularFireDatabase } from 'angularfire2/database';
+// import { AngularFireDatabase } from 'angularfire2/database';
 import { AuthService } from '../../services/auth.service';
+
+import { jewels } from '../../jewels/firebaseKeys';
 
 @Component({
     selector: 'page-new-game',
@@ -28,9 +30,11 @@ export class NewGamePage {
     constructor(
         public navCtrl: NavController, 
         public navParams: NavParams,
-        public db: AngularFireDatabase,
+        // public db: AngularFireDatabase,
         private authService: AuthService
-    ) {}
+    ) {
+        console.log(jewels.firebase);
+    }
 
     getCount() {
         this.currentCountArr = [];

@@ -1,5 +1,3 @@
-import { Player } from "./player.interface";
-
 export interface Game {
     name: string;
     gameType: string;

@@ -29,7 +29,7 @@ import { NewGamePage } from '../pages/new-game/new-game';
     ],
     imports: [
         BrowserModule,
-        IonicModule.forRoot(MyApp),,
+        IonicModule.forRoot(MyApp),
         AngularFireModule.initializeApp(jewels.firebase),
         AngularFireDatabaseModule, // for database
         AngularFireAuthModule
