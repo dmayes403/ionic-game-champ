@@ -10,7 +10,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { GamesPage } from '../pages/games/games';
 import { PlayerPage } from '../pages/player/player';
 import { StatsPage } from '../pages/stats/stats';
-import { GamePage } from '../pages/game/game';
+import { NewGamePage } from '../pages/new-game/new-game';
 
 @NgModule({
     declarations: [
@@ -19,7 +19,7 @@ import { GamePage } from '../pages/game/game';
         GamesPage,
         PlayerPage,
         StatsPage,
-        GamePage
+        NewGamePage,
     ],
     imports: [
         BrowserModule,
@@ -32,7 +32,7 @@ import { GamePage } from '../pages/game/game';
         GamesPage,
         PlayerPage,
         StatsPage,
-        GamePage
+        NewGamePage
     ],
     providers: [
         StatusBar,

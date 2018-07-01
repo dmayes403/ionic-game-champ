@@ -1,0 +1,31 @@
+<ion-header>
+
+    <ion-navbar>
+        <ion-title>New Game</ion-title>
+    </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <ion-item>
+        <ion-input placeholder="Game Name"></ion-input>
+    </ion-item>
+
+    <br>
+
+    <ion-item>
+        <ion-input placeholder="Game Type"></ion-input>
+    </ion-item>
+
+    <br>
+
+    <ion-item>
+        <div padding style="display: flex; flex-direction: row;">
+            <ion-label>Number of Players</ion-label>
+            <ion-select [selectOptions]="selectOptions" [(ngModel)]="select">
+                <ion-option *ngFor="let count of playerCount">{{count}}</ion-option>
+            </ion-select>
+        </div>
+    </ion-item>
+</ion-content>

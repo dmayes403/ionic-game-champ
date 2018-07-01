@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { GamePage } from '../game/game';
+import { NewGamePage } from '../new-game/new-game';
 
 @Component({
     selector: 'page-games',
@@ -8,8 +8,8 @@ import { GamePage } from '../game/game';
 })
 export class GamesPage {
 
-    gamePage = GamePage;
-
+    newGamePage = NewGamePage;
+    
     constructor(
         public navCtrl: NavController,
         public navParams: NavParams
