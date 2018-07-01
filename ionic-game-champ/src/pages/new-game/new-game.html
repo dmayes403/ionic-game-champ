@@ -29,7 +29,7 @@
         </ion-item>
     </ion-card>
 
-    <h5 *ngIf="currentCount > 0" padding>Select Players</h5>
+    <h5 *ngIf="currentCount > 0" padding>Select Player(s)</h5>
 
     <ion-list>
         <ion-card *ngFor="let newPlayer of currentCountArr; let i = index">
@@ -38,8 +38,14 @@
                 <ion-select [selectOptions]="selectPlayerOptions" [(ngModel)]="currentCount"
                     (ionChange)="selectPlayer()">
                     <ion-option *ngFor="let count of playerCount">{{count}}</ion-option>
+                    <ion-option>Other</ion-option>
                 </ion-select>
             </ion-item>
         </ion-card>
     </ion-list>
+
+    <h5 padding>Score to Win</h5>
+    <ion-item>
+        <ion-input type="number" placeholder="Score to win"></ion-input>
+    </ion-item>
 </ion-content>
