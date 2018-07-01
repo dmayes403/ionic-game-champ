@@ -32,9 +32,7 @@ export class NewGamePage {
         public navParams: NavParams,
         // public db: AngularFireDatabase,
         private authService: AuthService
-    ) {
-        console.log(jewels.firebase);
-    }
+    ) {}
 
     getCount() {
         this.currentCountArr = [];
@@ -49,5 +47,13 @@ export class NewGamePage {
 
     signUp() {
         this.authService.signup();
+    }
+
+    signOut() {
+        this.authService.signOut();
+    }
+
+    getCurrentUser() {
+        this.authService.getCurrentUser();
     }
 }
