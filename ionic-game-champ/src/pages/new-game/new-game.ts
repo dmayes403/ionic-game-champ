@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
+import { AngularFireDatabase } from 'angularfire2/database';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
     selector: 'page-new-game',
@@ -9,6 +11,7 @@ export class NewGamePage {
     playerCount = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
     currentCount = 0;
     currentCountArr = [];
+    // provider = new firebase.auth.GoogleAuthProvider();
 
     selectOptions = {
         title: 'Number of Players',
@@ -22,23 +25,25 @@ export class NewGamePage {
         mode: 'md'
     };
 
-    constructor(public navCtrl: NavController, public navParams: NavParams) {
-    }
-
-    ionViewDidLoad() {
-        console.log('ionViewDidLoad NewGamePage');
-    }
+    constructor(
+        public navCtrl: NavController, 
+        public navParams: NavParams,
+        public db: AngularFireDatabase,
+        private authService: AuthService
+    ) {}
 
     getCount() {
-        console.log(this.currentCount);
         this.currentCountArr = [];
         for (let i = 1; i <= this.currentCount; i++) {
             this.currentCountArr.push(i);
         }
-        console.log(this.currentCountArr);
     }
 
     selectPlayer() {
         console.log('player selected')
+    }
+
+    signUp() {
+        this.authService.signup();
     }
 }
