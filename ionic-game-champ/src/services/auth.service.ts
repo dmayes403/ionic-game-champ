@@ -6,7 +6,7 @@ import { AngularFireDatabase } from "angularfire2/database";
 import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument } from 'angularfire2/firestore';
 import * as firebase from 'firebase/app';
 
-import { map } from 'rxjs/operators';
+import { Player } from '../interfaces/player.interface';
 
 @Injectable()
 export class AuthService {
@@ -24,17 +24,21 @@ export class AuthService {
         this.firebaseAuth.auth.signInWithPopup(this.provider)
             .then(result => {
                 const authUser = result.user;
-                console.log(authUser);
                 this.db.collection('Users', ref => ref.where('uid', '==', `${authUser.uid}`))
                     .valueChanges().subscribe(user => {
-                        console.log(user);
+                        console.log(authUser);
                         if (user.length < 1) {
-                            console.log(authUser.uid);
-                            console.log('here');
-                            const person = {
-                                uid: authUser.uid.toString()
+                            const newUser: Player = {
+                                uid: authUser.uid,
+                                name: authUser.displayName,
+                                email: authUser.email,
+                                gamesPlayed: 0,
+                                gamesWon: 0,
+                                gamesLost: 0,
+                                gamesPlayedIn: [],
+                                photoUrl: authUser.photoURL
                             }
-                            this.db.collection('Users').add(person);
+                            this.db.collection('Users').add(newUser);
                         }
                     })
             })

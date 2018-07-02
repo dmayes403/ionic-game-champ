@@ -40,7 +40,7 @@
                 <ion-label>Select a Player</ion-label>
                 <ion-select [selectOptions]="selectPlayerOptions" [(ngModel)]="currentCount"
                     (ionChange)="selectPlayer()">
-                    <ion-option *ngFor="let count of playerCount">{{count}}</ion-option>
+                    <ion-option *ngFor="let player of availablePlayers$|async">{{player.name}}</ion-option>
                     <ion-option>Other</ion-option>
                 </ion-select>
             </ion-item>

@@ -6,4 +6,5 @@ export interface Player {
     gamesWon: number;
     gamesLost: number;
     gamesPlayedIn: string[];
+    photoUrl: string;
 }

@@ -4,8 +4,10 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
-import { AuthService } from '../services/auth.service';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
+
+import { AuthService } from '../services/auth.service';
+import { PlayersService } from '../services/players.service';
 
 import { jewels } from '../jewels/firebaseKeys';
 
@@ -49,7 +51,8 @@ import { NewGamePage } from '../pages/new-game/new-game';
         StatusBar,
         SplashScreen,
         { provide: ErrorHandler, useClass: IonicErrorHandler },
-        AuthService
+        AuthService,
+        PlayersService
     ]
 })
 export class AppModule { }
